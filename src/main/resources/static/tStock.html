@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 0px;
+            padding: 0px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>在庫名称</div><input type="text">
+    <div>単位名称</div>
+    <select>
+        <option>--</option>
+    </select>
+    <button>検索</button>
+    <button>閉じる</button>
+    <br>
+    <div>更新日時</div><input type="text">～<input type="text">
+    <div>作成日時</div><input type="text">～<input type="text">
+    <br>
+    <button>追加</button>
+    <button>削除</button>
+    <br>
+    <table border="1">
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>在庫ID</td>
+            <td>在庫名称</td>
+            <td>単位名称</td>
+            <td>在庫数量</td>
+            <td>更新者</td>
+            <td>更新日時</td>
+            <td>作成者</td>
+            <td>作成日時</td>
+            <td>備考</td>
+            <td>操作</td>
+        </tr>
+    </table>
+</body>
+
+</html>

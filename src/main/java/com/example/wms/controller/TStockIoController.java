@@ -24,4 +24,8 @@ public class TStockIoController {
        return stockIoService.selectAll(tStockIo);
     }
 
+    @GetMapping("/stockMsg")
+    public List<TStockIo> selectStockMsg(TStockIo tStockIo){
+       return stockIoService.selectAll(tStockIo);
+    }
 }
