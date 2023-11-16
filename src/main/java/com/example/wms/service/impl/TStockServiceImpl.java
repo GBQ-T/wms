@@ -1,6 +1,7 @@
 package com.example.wms.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,8 +16,8 @@ public class TStockServiceImpl implements TStockService{
     private TStockMapper tStockMapper;
 
 	@Override
-	public List<TStock> selectStocks(TStock tStock) {
-		return tStockMapper.selectStocks(tStock);
+	public List<TStock> selectStocks(Map<String, Object> map) {
+		return tStockMapper.selectStocks(map);
 	}
 
 }

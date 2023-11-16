@@ -4,8 +4,34 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.wms.mapper.TStockMapper">
 
-    <select id="selectStocks" resultType="TStock">
+	<select id="selectStocks" resultType="TStock" parameterType="Map">
+		select *
+		from t_stock
+		<where>
+			<if test="name !=null and name !=''">
+			
+                and name like '%' #{name} '%'
+                
+            </if>
 
-    </select>
+            <if test="unitId !=null and unitId !=0">
+
+                and unit_id = #{unitId}
+
+            </if>
+
+            <if test="updateDateFROM !=null and updateDateFROM!='' and updateDateTO !=null and updateDateTO!=''">
+
+                and update_date BETWEEN STR_TO_DATE(updateDateFROM, '%Y/%m/%d') AND STR_TO_DATE(updateDateTO, '%Y/%m/%d')
+
+            </if>
+
+            <if test="createDateFROM!=null and createDateFROM!='' and createDateTO!=null and createDateTO!=''">
+
+                and create_date BETWEEN STR_TO_DATE(createDateFROM, '%Y/%m/%d') AND STR_TO_DATE(createDateTO, '%Y/%m/%d')
+
+            </if>
+		</where>
+	</select>
 
 </mapper>

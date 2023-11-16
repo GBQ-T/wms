@@ -1,5 +1,7 @@
 package com.example.wms.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,8 +20,8 @@ public class TStockController {
     TStockServiceImpl stockService;
 	
 	@RequestMapping("/list")
-    public String selectStocks(Model model,@RequestParam("tStock") TStock tStock){
-		model.addAttribute("stocks",stockService.selectStocks(tStock));
+    public String selectStocks(Model model,@RequestParam("queryMap") Map<String, Object> queryMap){
+		model.addAttribute("stocks",stockService.selectStocks(queryMap));
         return "tStock";
     }
 }
