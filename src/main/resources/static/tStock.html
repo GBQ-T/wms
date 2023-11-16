@@ -41,6 +41,23 @@
             <td>作成日時</td>
             <td>備考</td>
             <td>操作</td>
+        </tr>:
+        <tr th:each="stock :${stocks}">
+            <td><input type="checkbox"></td>
+            <td>[[${stock.id}]]</td>
+            <td>[[${stock.name}]]</td>
+            <td>[[${stock.unitId}]]</td>
+            <td>[[${stock.stockNum}]]</td>
+            <td>[[${stock.updateUser}]]</td>
+            <td>[[${stock.updateDate}]]</td>
+            <td>[[${stock.createUser}]]</td>
+            <td>[[${stock.createDate}]]</td>
+            <td>[[${stock.remarks}]]</td>
+            <td>
+                <button>編集</button>
+                <button>削除</button>
+                <button>入出庫</button>
+            </td>
         </tr>
     </table>
 </body>
